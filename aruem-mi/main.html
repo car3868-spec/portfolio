@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    body{
+        font-family: "Roboto", sans-serif;
+    }
+    body, h1,h2,h3,h4,p{
+        margin: 0;
+    }
+    img{
+        object-fit: cover;
+        display: block;
+        width: 100%; box-sizing: border-box;
+    }
+    header{
+        position: relative;
+        height: 50px;        
+        width: 100%;
+        padding: 0px 20px;
+        box-sizing: border-box;
+    }
+    header h2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    header .menu{
+        height: 100%;
+        align-content: center;
+        text-align: end;
+        
+        
+    }
+    header .menu > i:nth-child(1){
+        margin-right: 0px;
+    }
+    .main-img{
+        height: 250px;
+        position: relative;    
+    }
+    .main-img img{
+        width: 100%;
+        height: 100%;
+        /* filter: grayscale(100%);  */
+    }
+    .main-img p{
+        position: absolute;
+        left: 80%; top: 50%;
+        transform: translate(-50% , -50%);
+        text-align: center;
+        width: 250px;
+        font-size: 15px; font-weight: 500;
+        color: rgb(255, 255, 255);
+        background-color: #000a;
+        border-radius: 15px;
+    }
+    .main-img span{
+        color: rgb(213, 123, 13);
+    }
+    .month h1{
+        font-size: 15px;
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+    .month{
+        padding-top: 30px; 
+    }
+    .month .item-box{
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center;
+        gap: 50px;
+    }
+    .month .item-box .item p{
+        align-items: center;
+        text-align: center;
+    }
+    .month .item-box .item{
+        padding-top: 10px;
+    }
+    .month .item-box .item img{
+        height: 150px;
+        width: 150px;
+        border-radius: 10px;
+    }
+    .fest{
+        width:100%;
+        position: relative;
+        padding-top: 30px;
+    }
+    .fest .img-box img{
+        width: 100%; height: 100px;
+    }
+    .fest .img-box p{
+        position: absolute;
+        left: 50%; top: 40%;
+        transform: translate(-50% , -40%);
+        font-weight: 800; font-size: 20px;
+        color: white;
+    }
+    .fest .box{
+        width: 150px; height: 30px;
+        align-content: center; text-align: center;
+        color: white; background-color: rgb(53, 53, 53);
+        border-radius: 15px; position: absolute;
+        left: 50%; top: 80%; 
+        transform: translate(-50% , -80%);
+    }
+    .recommand{
+        display: flex;
+        justify-content: space-between;
+    }
+    .recommand .tab{
+        width: 70px; 
+        text-align: center;
+        align-items: center;
+        margin: 30px 10px; 
+        gap: 10px; background-color: rgb(255, 148, 139);
+        color: white; border-radius:30px;
+    }
+    .re-img .item{
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        height: 250px; padding: 10px 10px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .re-img .item .img-box {
+        width: 50%;
+        align-content: center; text-align: center;
+    }
+    .re-img .item .img-box img{
+        width: 100%; height: 100%;
+    }
+    .re-img .item .text-box{
+        width: 50%;
+        height: 50%;
+        text-align: center; align-content: center;
+         margin-top: 35px;
+     }
+    .re-img .item .text-box h2{
+        font-size: 30px;
+      }
+    .re-img .item .text-box p{
+        font-size: 15px;
+    }
+    .re-img .bt{
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+        display: flex;
+        gap: 15px;
+        justify-content: flex-end;
+    }
+    .re-img .button{
+       width: 70px; height: 25px;
+       align-content: center; text-align: center;
+       background-color:rgb(255, 148, 139) ;
+       color: white; border-radius: 30px;
+    }
+    footer{
+        text-align: center; 
+        padding-top: 30px;
+    }
+    footer h2{
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    footer .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+    }
+    footer .container .line{
+        width: 1px;
+        height: 10px;
+        background-color: black;
+    }
+    footer p{
+        font-size: 10px;
+        
+    }
+
+</style>
+<body>
+    <div class="wrap">    
+        <header>
+            <div class="text-box"></div>
+            <h2>areum-mi</h2>
+            <div class="menu">
+                <i class="fa-solid fa-circle-user"></i>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+        <div class="main-img">
+            <img src="image/chanel no.5.png" alt="">
+            <p>이목을 끄는 강렬함 <br> CHANEL <span>NO.5</span></p>
+        </div>
+        <section class="month">
+            <h1>이달의 향수</h1>
+            <div class="item-box">
+                <div class="item">
+                    <img src="image/chanel no.5.png" alt="">
+                    <p>Chanel No.5 <br> 150.000won</p>
+                </div>
+                <div class="item">
+                    <img src="image/16287196_g.jpg" alt="">
+                    <p>lorem <br> 150.000won</p>
+                </div>
+            </div>
+            <div class="item-box">
+                <div class="item">
+                    <img src="image/NE8nEcBW9h-10A2BCC5-3CA2-4FF8-B0BF-F834E2E0233C.jpg" alt="">
+                    <p>lorem <br> 150.000won</p>
+                </div>
+                <div class="item">
+                    <img src="image/detail_47961_0_7dfc3bdd-e5f6-4169-be76-57b5a9a4d278.jpg" alt="">
+                    <p>lorem <br> 150.000won</p>
+                </div>
+
+            </div>
+        </section>
+        <section class="fest">
+            <div class="img-box">
+                <img src="image/dmitry-chernyshov-mP7aPSUm7aE-unsplash.jpg" alt="">
+                <p>맥북 증정 이벤트</p>
+            </div>
+            <div class="box">
+                바로가기</div>            
+        </section>
+        <section class="recommand">
+            <div class="tab">
+                <p>상큼한</p>
+            </div>
+            <div class="tab">
+                <p>달콤한</p>
+            </div>
+            <div class="tab">
+                <p>시트러스</p>
+            </div>
+            <div class="tab">
+                <p>묵직한</p>
+            </div>
+            <div class="tab">
+                <p>깔끔한</p>
+            </div>
+        </section>
+        <section class="re-img">
+            <div class="item">
+                <div class="img-box">
+                    <img src="image/chanel no.5.png" alt="">
+                </div>
+                <div class="text-box">
+                    <h2>chanel No.5</h2>
+                    <p>make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                </div>
+                <div class="bt">
+                    <div class="button">
+                        <p>상큼한</p>
+                    </div>
+                    <div class="button">
+                        <p>깔끔한</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img-box">
+                    <img src="image/chanel no.5.png" alt="">
+                </div>
+                <div class="text-box">
+                    <h2>chanel No.5</h2>
+                    <p>make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                </div>
+                <div class="bt">
+                    <div class="button">
+                        <p>상큼한</p>
+                    </div>
+                    <div class="button">
+                        <p>깔끔한</p>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        </div>
+    <footer>
+        <h2>ⓒ2025 areum-mi copyright</h2>
+        <div class="container">
+            <p>로그아웃 </p> 
+            <div class="line"></div>            
+            <p>회사소개</p> 
+            <div class="line"></div>            
+            <p>개인정보처리방침</p>
+        </div>
+    </footer>
+</body>
+
+</html>
