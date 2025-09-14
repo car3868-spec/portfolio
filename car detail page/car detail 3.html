@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+    body,p,h1,h2,h3{
+        margin: 0;
+        
+        font-family: "Noto Sans KR", sans-serif;
+    }
+    .mon{
+        font-family: "Montserrat", sans-serif;
+    }
+    img{
+        width: 100%;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+    header{
+        width: 100%;
+    }
+    header nav .menu{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: right;
+        gap: 70px;    
+        font-size: 20px;
+        box-sizing: border-box;
+        padding-right: 20px; margin-bottom: 50px;
+    }
+    header nav .menu a{
+        text-decoration: none;
+        color: inherit;
+    }
+    header nav .img-box{
+        width: 100%;
+        position: relative;
+        height: 500px; 
+        
+    }
+    header nav .img-box img{
+        width: 100%;
+        height: 350px;
+        
+    }
+    header nav .img-box p{
+        position: absolute;
+        left:15%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: 50px;
+        color: white;
+        font-weight: bold; font-size: 30px;
+    }
+    header nav .img-box h2{
+        position: absolute;
+        left: 15%;
+        top: 60%; transform: translateY(-60%);
+        color: antiquewhite; font-size: 50px;
+    }
+    
+    header nav .buy{
+        display: flex;
+        width: 100%;
+        height: 100px;
+        align-content: center;
+        gap: 30px; justify-content: center;
+    }
+ 
+     
+    header nav .buy p{
+        width: 350px;
+        height: 50px;
+        text-align: center;
+        background-color: #5f5f5f;
+        color: aliceblue;
+        align-content: center;
+        border-radius: 30px; font-size: 24px;
+    }
+    header nav .buy p:hover{
+        background-color: black;
+    }
+
+    
+    /* 설명 */
+
+
+
+    .explain{
+
+     }
+    .explain .container{
+        display: flex; 
+        height: 800px;
+        justify-content: space-between;
+        padding: 100px 100px;
+    }
+    .explain .container .item{
+        text-align: center;
+        font-size: medium;
+        width: 400px; 
+    }
+    .explain .container .item p{
+        font-size: 25px;
+    }
+    .explain .container .item img{
+        width: 250px;
+        height: 250px;
+        box-sizing: border-box;
+        object-fit: cover;
+        margin-bottom: 30px; 
+    }
+    .explain .container .item h1{
+        color: rgb(36, 29, 138);
+        font-size: 50px; margin-bottom: 30px;
+    }
+     .explain .container .item:nth-child(2) img{
+        width: 150px;
+        height: 150px;
+        margin-bottom: 55px;
+     }
+    .explain .container .item:nth-child(2){
+        align-self: center;
+    }
+    .explain .container .item:nth-child(1){
+        align-self: flex-end;
+    }
+     .explain .container h2{
+        color: rgb(36, 29, 138);
+        margin-top: 70px; font-size: 30px;
+     }
+    .exterior{
+        width: 100%;
+        padding: 250px 100px;
+        box-sizing: border-box;
+     } 
+    .exterior .container{
+        display: flex;  
+        gap: 100px;
+    }
+    .exterior .container .item{
+        width: calc((100% - 20px)/3);    
+    }
+      .exterior .item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+    }
+
+    .exterior .item.show {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    .exterior .item:nth-child(1).show { transition-delay: 0s; }
+    .exterior .item:nth-child(2).show { transition-delay: 0.4s; }
+    .exterior .item:nth-child(3).show { transition-delay: 0.8s; }
+    
+    .exterior .container .item h2{
+        font-size: 35px;
+        text-align: center; margin-bottom: 30px;
+        color:rgb(36, 29, 138); ;
+    }
+    .exterior .container .item p{
+        font-size: 20px;
+        font-weight: 500; text-align: center;
+    }
+    .exterior .container img{
+        box-sizing: border-box;
+        object-fit: cover;
+        width: 100%;
+        height: 500px;     
+    }
+    .interior{
+        width: 100%;
+        padding: 100px 100px;
+        box-sizing: border-box; 
+    }
+    .interior .container .top{
+        width: 100%;
+        height: 700px;
+        position: relative;
+    }
+    .interior .container .top img{
+        height: 100%;
+        box-sizing: border-box;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+    .interior .container .top p{
+        position: absolute;
+        right: 35px;
+        top: 30%;
+        text-align: center; align-content: center;
+        color: black; font-size: 30px;
+        width: 650px; height: 150px;
+        background-color: rgba(255, 255, 255, 0.733); border-radius: 30px;
+    }
+    .interior .container .bottom{
+        height: 300px;
+        display: flex;
+        gap: 50px;
+        padding: 100px 0px;
+    }
+    .interior .container .bottom .item{
+        width: calc((100% - 20px)/3);
+    }
+    .interior .container .bottom img{
+        box-sizing: border-box;
+        height: 100%;
+        border-radius: 30px;
+    }
+
+
+
+/* 스와이퍼 편의사항 */
+
+
+
+    .comfort{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 100px 100px;
+        position: relative;
+    }
+    .comfort .comfort-swiper{
+        display: flex;
+        height: 500px;
+        gap: 70px;
+        padding-bottom: 100px;
+    }
+    .comfort .comfort-swiper .text-box{
+        width: 30%;
+        text-align: center;
+        align-content: center;
+        padding: 50px;
+        font-size: 30px;
+        background-color: rgb(0, 0, 0); border-radius: 30px;
+    }
+    .comfort .comfort-swiper .text-box p{
+        margin-bottom: 50px;
+        color: rgb(160, 160, 160);;
+    }
+     .comfort .comfort-swiper .text-box h3{
+        font-size: 50px;
+        color:white; ;
+     }
+    .comfort .comfort-swiper .img-box{
+        width: 70%; 
+    }
+    .comfort .comfort-swiper .img-box img{
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+    }
+    .comfort .swiper-pagination{
+        position: absolute;
+        bottom: 50px; left: 50%; transform: translateX(-50%);
+    }
+
+
+
+
+
+
+        /* 모델 스와이퍼 */
+    .model{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 50px 350px;
+        position: relative;
+        padding-bottom: 100px;
+    }
+    .model .button{
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 65px;
+    }
+    .model .button .fa-arrow-right,
+    .model .button .fa-arrow-left{
+        color: #000; 
+        
+    }
+    .model .button .fa-arrow-right::after,
+    .model .button .fa-arrow-left::after{
+        font-size: 50px;
+    }
+    .model .button .swiper-button-disabled{
+        color: #0006;
+    }
+    .model .container{            
+        display: flex;
+        justify-content: space-between;
+    
+    }
+    .model .item{
+        width: 100%;
+        position: relative;
+    }
+    .model .container img{
+        width: 100%;
+        height: 500px;
+        object-fit: cover; 
+    }
+    .model .item p{
+        position: absolute;
+        top: 50px;
+        font-size: 22px;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+    }
+
+
+
+
+
+
+
+    .option{
+        padding: 100px 100px;
+    }
+    
+    .option .top{
+        display: flex;
+        justify-content: first baseline;
+        gap: 50px; padding-bottom: 100px;
+    }
+    .option .top .item{
+        width: calc((100% - 230px)/3);
+
+    }
+    .option .top .item img{
+        height: 700px;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+    .option .bottom{
+        display: flex;
+        justify-content: end;
+        gap: 50px; padding-bottom: 100px;
+    }
+    .option .bottom .item{
+        width: calc((100% - 230px)/3);
+    }
+    .option .bottom .item img{
+        height: 700px;
+        object-fit:cover ;
+        box-sizing: border-box;
+    }
+    footer {
+        padding: 20px 50px;
+        box-sizing: border-box;
+    }
+
+    footer p{
+        margin-bottom: 20px;
+    }
+    footer h2{
+        margin-bottom: 30px;
+    }
+    footer .content{
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+            
+    }
+    footer .bottom > h2{
+        margin-bottom: 12px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    footer .bottom .connected{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        /* justify-content: center; */
+    }
+    footer .bottom .connected p{
+        margin-bottom: 10px;
+    }
+    footer .bottom .connected .line{
+        display: inline-block;
+        width: 2px;
+        height: 10px;
+        background-color: #000;
+    }
+    footer .bottom .copy-right{
+        display: flex;
+        gap: 10px; 
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    footer .bottom .copy-right p{
+        margin-bottom: 0;
+    }
+    footer .bottom .copy-right .line{
+        display: inline-block;
+        width: 2px;
+        height: 10px;
+        background-color: #000;
+    }
+        
+</style>
+<body>
+    <div class="wrap">
+        <header>
+            <nav>
+                <div class="menu">
+                    <li><a href="#gallery">gallery</a></li>
+                    <li><a href="#menu">menu</a></li>
+                    <i class="fa-solid fa-circle-user"></i>
+                    </div>
+                <div class="img-box">
+                    <img src="car detail pic/Porsche-911_Turbo_50_Years-2024-1280-793a32b17434d3bf01852418c08113ca69.jpg" alt="">
+                    <p>최강 성능의 911</p>
+                    <h2>911 TURBO S</h2>
+                </div>
+                <div class="buy">
+                    <p>시승신청</p>
+                    <p>구매</p>
+                    <p>가격표</p>
+                  
+                    
+
+
+
+                    <!-- 설명 -->
+                </div>   
+            </nav>
+        </header>
+        <section class="explain">
+            <div class="container">
+                <div class="item">
+                    <img src="car detail pic/speedometer.png" alt="">
+                    <h1 class="mon">HIGH SPEED</h1>
+                    <p>최고시속 330km/h의 속도와 2.7초의 제로백을 집적 느껴보세요</p>
+                    <h2 class="mon">330km/h</h2>
+                </div>
+                <div class="item">
+                    <img src="car detail pic/free-icon-car-engine-2061866.png" alt="">
+                    <h1 class="mon">PERFORMENCE</h1>
+                    <p>662마력의 엔진출력을 경험하며, 극한까지 차량을 몰아붙이세요</p>
+                    <h2 class="mon">662hp/487kw</h2>
+                </div>
+                <div class="item">
+                    <img src="car detail pic/911 side sil.png" alt="">
+                    <h1 class="mon">DESIGN</h1>
+                    <p>60년을 지켜온 헤리티지의 라인과, 아름다운 곡선형 디자인을, 보고 느끼고
+                        감상하세요
+                    </p>
+                    <h2 class="mon">heritage curve</h2>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- 익스테리어 -->
+        <section class="exterior">
+                <div class="container">
+                    <div class="item">
+                        <img src="car detail pic/frtttttttttttrrrrrrrrtfffffff.png" alt="">
+                        <h2>전면 디자인</h2>
+                        <p>아름다운 원형의 헤드라이트, 거대한 에어인테이크를 경험하세요</p>
+                    </div>
+                    <div class="item">
+                        <img src="car detail pic/911 side re.png" alt="">
+                        <h2>사이드 디자인</h2>
+                        <p>약 100년을 이어온 헤리티지의 라인을 즐기고, 감상하며,
+                            경험하세요 </p>
+                    </div>
+                    <div class="item">
+                        <img src="car detail pic/rear 911.png" alt="">
+                        <h2>후면 디자인</h2>
+                        <p>거대한 휀더와 큼직한 스포일러의 전율을 느껴보세요</p>
+                    </div>
+                </div>
+        </section>
+
+
+
+
+        <!-- 인테리어 -->
+        <section class="interior">
+            <div class="container">
+                <div class="top">
+                    <img src="/interior/int.PNG" alt="">
+                     <p>911터보s의 아늑함과 강렬함을 느껴보세요</p>
+                </div>
+                <div class="bottom">
+                    <div class="item">
+                        <img src="/interior/gear.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="/interior/cup.PNG" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="/interior/seat.PNG" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- 편의사항 -->
+        <section class="comfort">
+            <div class="swiper-comfort swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide comfort-swiper">
+                        <div class="text-box">
+                            <p>빠른만큼 강하게 멈춘다.<br>강력한 세라믹 브레이크</p>
+                            <h3>8p 브레이크</h3>
+                        </div>
+                        <div class="img-box">
+                            <img src="car detail pic/break.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide comfort-swiper">
+                        <div class="text-box">
+                            <p>내몸에 맞는 단단함</p>
+                            <h3>버킷시트</h3>
+                        </div>
+                        <div class="img-box">
+                            <img src="car detail pic/kit seat.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </section>
+
+
+    
+
+
+
+
+        <!-- 스와퍼가   되는 모델들 소개 -->
+        <section class="model">            
+            <div class="swiper model-swiper container" id="model-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide item">
+                        <img src="/side/carrera gts con re.png" alt="">
+                        <p>carrera gts cabriolet</p>
+                    </div>
+                    <div class="swiper-slide item">
+                        <img src="/side/carrera gts re.png" alt="">
+                        <p>carrera gts</p>
+                    </div>
+                    <div class="swiper-slide item">
+                        <img src="/side/carrera gt3rs re.png" alt="">
+                        <p>gt3 rs</p>
+                    </div>
+                    <div class="swiper-slide item">
+                        <img src="/side/carrera re.png" alt="">
+                        <p>carrera s</p>
+                    </div>
+                    <div class="swiper-slide item">
+                        <img src="/side/carrera con re.png" alt="">
+                        <p>carrera s cabriolet</p>
+                    </div>
+                    <div class="swiper-slide item">
+                        <img src="side/turbo s.png" alt="">
+                        <p>turbo s</p>
+                    </div>
+                    <div class="swiper-slide item">
+                        <img src="/side/turbo s cab.png" alt="">
+                        <p>turbo s cabriolet</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="button">
+                <div class="swiper-button-next fa-arrow-right"></div>
+                <div class="swiper-button-prev fa-arrow-left"></div>    
+            </div>
+        </section>
+
+
+
+
+        <footer>      
+            <div class="bottom">
+                <h2>ⓒcopylight 2025 lnc</h2>
+                <div class="connected">
+                    <p>개인정보 처리방침</p>
+                    <span class="line"></span>
+                    <p>커넥티드 서비스 개인정보 처리방침</p>
+                    <span class="line"></span>
+                    <p>커넥티드 서비스 이용약관</p>
+                    <span class="line"></span>
+                    <p>개인정보 처리방침 변경 안내</p>
+                </div>
+                <div class="copy-right">
+                    <p>00유한회사</p>
+                    <span class="line"></span>
+                    <p>대표전화:123-456-789</p>
+                    <span class="line"></span>
+                    <p>대표이사:000</p>
+                    <span class="line"></span>
+                    <p>주소:서울특별시 강남구 테헤란로 123-1</p>
+                    <span class="line"></span>
+                    <p>https://support.123.com/ko-kr</p>
+                    <span class="line"></span>
+                    <p>사업자등록번호:123-456-789</p>
+                    <span class="line"></span>
+                    <p>e-mail:car3868@naver.com</p>
+                    
+                </div>
+                
+            </div> 
+        </footer>
+    </div>
+    <script>
+        
+        let modelswiper = new Swiper(".model .model-swiper",{
+            navigation: {
+                nextEl: ".model .fa-arrow-right",
+                prevEl: ".model .fa-arrow-left",
+            },
+        });
+
+          //편의사항 스와이퍼
+          let comfortswiper = new Swiper(".comfort .swiper-comfort", {
+            pagination: {
+            el: ".swiper-pagination",
+            clickable:true,
+            },
+        });
+
+
+
+        $(function(){
+
+            // 인테리어 클릭시 이미지 변경 쿼리
+            let int_s_img = $(".interior .bottom img");
+            let int_m = $(".interior .top img");
+            int_s_img.click(function(){
+                let imgsrc = $(this).attr("src");
+                int_m.attr("src", imgsrc);
+                
+            });
+            //
+
+            // 순차적으로 나오는 쿼리
+            const items = document.querySelectorAll(".exterior .item");
+
+            const observer = new IntersectionObserver((entries) => {
+                     entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                     entry.target.classList.add("show");
+                }
+             });
+                 }, { threshold: 0.2 });
+
+            items.forEach(item => observer.observe(item));
+
+          
+            
+
+
+
+        });
+    </script>
+</body>
+</html>
